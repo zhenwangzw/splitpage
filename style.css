@@ -1,0 +1,177 @@
+/* 
+global variables here 
+*/
+:root{
+  --container-bg-color: #333;
+  --left-bg-color: rgba(233,39,39,0.3);
+  --left-bg-color-whenhoverright: rgba(49, 36, 36, 0.7);
+  --left-btn-hover-color: rgba(161,11,11,0.3);
+  --right-bg-color: rgba(206, 206, 160, 0.3);
+  --right-bg-color-whenhoverleft: rgba(15, 15, 15, 0.7);
+  --right-btn-hover-color: rgba(92,92,92,0.3);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 800ms;
+}
+
+/* 
+normalize the doms 
+*/
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  padding: 0;
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* 
+customize dom elements style
+*/
+
+h1{
+  position: absolute;
+  font-size: 4rem;
+  color: #fff;
+  left: 50%;
+  top: 20%; 
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.button{
+  position: absolute;
+  display: block;
+  padding: 1.5rem;
+  left: 50%;
+  top: 40%;
+  margin-top: 2rem;
+  transform: translateX(-50%);
+  border: 2px solid #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* 
+customize hover style
+*/
+
+.split.left .button:hover{
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+  transition: background-color 0.6s, border 0.6s;
+}
+.split.right .button:hover{
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+  transition: background-color 0.6s, border 0.6s;
+}
+
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--container-bg-color);
+}
+
+/* .container div:nth-child(1){
+  width: 20%;
+}
+
+.container div:nth-child(2){
+  width: 20%;
+} */
+
+.split{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left{
+  left: 0;
+  /* background: url('img/IMG_4326.JPG') center center no-repeat; */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url(img/IMG_4326.JPG);
+  background-position: center;
+  background-size: cover;
+}
+
+.split.left:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--left-bg-color);
+}
+
+.split.right{
+  right: 0;
+  /* background: url('img/IMG_4380.JPG') center center no-repeat; */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url(img/IMG_4380.JPG);
+  background-position: center;
+  background-size: cover;
+}
+
+.split.right:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--right-bg-color);
+}
+
+/* .split is redundant... */
+.split.left,
+.split.right,
+.split.left:before,
+.split.right:before{
+  transition: var(--speed) all ease-in-out;
+}
+
+.hover-left .left{
+  width: var(--hover-width);
+}
+.hover-left .right{
+  width: var(--other-width);
+}
+.hover-left .right:before{
+  background: var(--right-bg-color-whenhoverleft);
+  z-index: 2;
+}
+
+.hover-right .right{
+  width: var(--hover-width);
+}
+.hover-right .left{
+  width: var(--other-width);
+}
+.hover-right .left:before{
+  background: var(--left-bg-color-whenhoverright);
+  z-index: 2;
+}
+
+@media(max-width:800px){
+  h1{
+    font-size: 2rem;
+  }
+}
+
+@media(max-height: 700px){
+  .button{
+    top: 70%;
+  }
+}
