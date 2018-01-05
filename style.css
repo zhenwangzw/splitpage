@@ -104,8 +104,8 @@ customize hover style
 
 .split.left{
   left: 0;
-  /* background: url('img/img_4326.jpg') center center no-repeat; */
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url(img/img_4326.jpg);
+  /* background: url('img/IMG_4326.JPG') center center no-repeat; */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url(img/IMG_4326.JPG);
   background-position: center;
   background-size: cover;
 }
@@ -120,8 +120,8 @@ customize hover style
 
 .split.right{
   right: 0;
-  /* background: url('img/img_4380.jpg') center center no-repeat; */
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url(img/img_4380.jpg);
+  /* background: url('img/IMG_4380.JPG') center center no-repeat; */
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), url(img/IMG_4380.JPG);
   background-position: center;
   background-size: cover;
 }
